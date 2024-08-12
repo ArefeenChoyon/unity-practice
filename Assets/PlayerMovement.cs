@@ -7,16 +7,10 @@ public class PlayerMovement : MonoBehaviour
 
     public Rigidbody rb;
 
-
-    // Start is called before the first frame update
-    void Start()
-    {
-        rb.AddForce(0, 200, 500);
-    }
-
     // Update is called once per frame
-    void Update()
+    // We Used "Fixed"Update method, because we are messing with physics stuffs, Unity likes it a lot
+    void FixedUpdate()
     {
-        
+        rb.AddForce(0, 0, 2000 * Time.deltaTime);   //Add a force of 2000 to z-axix, "Delta" To fix the frame rate issue between computers, higher the frame rate lower the value
     }
 }
